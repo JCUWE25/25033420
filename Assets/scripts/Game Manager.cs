@@ -65,13 +65,23 @@ public class GameManager : MonoBehaviour
 
         if (hasChangedState) 
         {
-            if (state == GameState.GAMEPLAY) 
-            {
-                Time.timeScale = 0.0f;
-            }
-            else if(state == GameState.PAUSE) 
-            {
-                Time.timeScale = 1.0f; 
+            //if (state == GameState.GAMEPLAY) 
+            //{
+            //    Time.timeScale = 0.0f;
+            //}
+            //else if(state == GameState.PAUSE) 
+            //{
+            //    Time.timeScale = 1.0f; 
+            //}
+
+            switch (state) 
+            { 
+            case GameState.GAMEPLAY :
+                    Time.timeScale = 0.0f;
+                    break;
+                case GameState.PAUSE:
+                    Time.timeScale = 1.0f;
+                    break;
             }
             hasChangedState= false;
         }
