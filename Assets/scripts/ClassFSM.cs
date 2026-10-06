@@ -5,24 +5,38 @@ public class ClassFSM
 {
     //false = gameplay / true = paused
     public bool GamePaused;
+   
+    public int StateNum;
 
-void Update() 
+    public Update() 
     {
 
 
-        switch (GamePaused)
+        switch (StateNum)
         {
-            case false:
+            case 0:
+                
+                  Gameplay.realtime();
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    GamePaused = true;
+
+                  
+                    StateNum = 1;
+                    
+
                 }
                 break;
 
-            case true:
+            case 1:
+                
+                 Pause.slow();
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    GamePaused = false;
+                    
+                   
+                    StateNum = 0;
+                  
+
                 }
                 break;
 
@@ -30,27 +44,27 @@ void Update()
 
     }
 
-public class PAUSE
-{
-        public bool ActiveSTATE;
-        private void LateUpdate() 
-        {
-            if (ActiveSTATE == true) 
-            {
-             Time.timeScale = 1.0f;
-            }
-       
-        }
-        
+
+
 }
 
-public class gameplay
+// 1
+public class Pause
 {
-        private void LateUpdate()
-        {
-            Time.timeScale = 1.0f;
-        }
+
+    public static void slow() 
+    {
+        Time.timeScale = 1.0f;
+
+    }
+}
+// 2
+public class Gameplay
+{
+    public static void realtime()
+    {
+        Time.timeScale = 0.0f;
+
     }
 
 }
-
