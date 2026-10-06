@@ -1,14 +1,16 @@
 using UnityEngine;
 
-public class pauseSTATE : ClassFSM
+public abstract class pauseSTATE : baseSTATE
 {
-    public override abstract void EnterState(PauseManager player) 
+    public override abstract void EnterState(PauseManager player)
     {
+
+    }
+
+
+    public override void UpdateState(PauseManager player)
+    { 
     
     }
 
-    public override void UpdateState(PauseManager player)
-    {
-
-    }
 }

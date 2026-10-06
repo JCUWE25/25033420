@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PauseManager : MonoBehaviour
 {
-    public playerBaseState currentState;
-    public playerGameplaySTATE GameplaySTATE = new GameplaySTATE;
-    public playerPauseSTATE pauseSTATE = new pauseSTATE;
+    baseSTATE currentState;
+    public  GameplaySTATE playState = new GameplaySTATE();
+    public  pauseSTATE frozenState = new pauseSTATE();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,7 +19,7 @@ public class PauseManager : MonoBehaviour
     {
         currentState.UpdateState(this);
     }
-    public void switchState(playerBaseState  state) 
+    public void switchState(baseSTATE state) 
     {
     currentState = state;
         state.EnterState(this);

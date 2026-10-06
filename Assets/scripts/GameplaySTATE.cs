@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class GameplaySTATE: ClassFSM
+public class GameplaySTATE: baseSTATE
 {
     public override void EnterState(PauseManager player) 
     {
-    
+        
     }
     public override void UpdateState(PauseManager player) 
     {
-    
+    Debug.Log("works");
     }
 }

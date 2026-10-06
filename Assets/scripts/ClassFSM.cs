@@ -3,8 +3,8 @@ using UnityEngine;
 
 public abstract class ClassFSM
 {
-    abstract void EnterState(PauseManager player);
-    abstract void UpdateState(  PauseManager player);
+    public abstract void EnterState(PauseManager player);
+    public abstract void UpdateState(  PauseManager player);
 
 
 }
