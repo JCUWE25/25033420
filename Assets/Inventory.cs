@@ -3,6 +3,7 @@ using System.Collections.Generic;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] GameManager inventoryManagement;
+    [SerializeField] string NewName;
     public List<string> items = new List<string>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,16 +15,15 @@ public class Inventory : MonoBehaviour
     void Update()
     {
         
-
         if (inventoryManagement.state == GameState.GAMEPLAY) 
         {
         if (Input.GetKeyDown(KeyCode.R)) 
         {
-            AddItemToInventory("Item A");
+            AddItemToInventory(NewName);
         }
         if (Input.GetKeyDown(KeyCode.T))
         {
-            RemoveItemFromInventory("Item A");
+            RemoveItemFromInventory(NewName);
         }
         }
     }
