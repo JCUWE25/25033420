@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-public class Inventory : MonoBehaviour
+public class Inventory :  InventoryAbstract
 {
     [SerializeField] GameManager inventoryManagement;
     [SerializeField] string NewName;
@@ -27,12 +27,12 @@ public class Inventory : MonoBehaviour
         }
         }
     }
-    public void AddItemToInventory(string itemName) 
+    public override void AddItemToInventory(string itemName)
     {
     items.Add(itemName);
     }
 
-    public void RemoveItemFromInventory(string itemName)
+    public override void RemoveItemFromInventory(string itemName)
     {
         items.Remove(itemName);
     }
