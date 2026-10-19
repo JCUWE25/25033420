@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-public class Inventory :  InventoryAbstract
+public class Inventory : InventoryAbstract
 {
     [SerializeField] GameManager inventoryManagement;
     [SerializeField] string NewName;
@@ -35,5 +35,16 @@ public class Inventory :  InventoryAbstract
     public override void RemoveItemFromInventory(string itemName)
     {
         items.Remove(itemName);
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        ItemClassInventory item = hit.gameObject.GetComponent<ItemClassInventory>();
+
+        if (item != null) 
+        {
+            items.Add(item.ItemName);
+            item.OnCollect();
+        }
     }
 }

@@ -2,14 +2,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class PickUp : InventoryAbstract
+public class PickUp : MonoBehaviour
 {
-    [SerializeField] GameObject CoinUI;
-    [SerializeField] TextMeshProUGUI coinCounter;
+ 
 
-    bool HasPickedUp;
-    int CoinNum;
-    public List<string> items = new List<string>();
+     private bool HasPickedUp;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,35 +19,13 @@ public class PickUp : InventoryAbstract
     {
         if (HasPickedUp == true) 
         {
-            AddItemToInventory("coin");
-        CoinNum = items.Count;
-        coinCounter.text=CoinNum.ToString();
-            HasPickedUp = false;
-        }
-        //get rid of coin
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            RemoveItemFromInventory("coin");
+  
         }
         
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Coin")
-        {
-            HasPickedUp = true;
-        Destroy(other);
-        }
-    }
 
-    public override void AddItemToInventory(string itemName)
+    public virtual void Collect()
     {
-        items.Add(itemName);
+        gameObject.SetActive(false);
     }
-
-    public override void RemoveItemFromInventory(string itemName)
-    {
-        items.Remove(itemName);
-    }
-
 }
