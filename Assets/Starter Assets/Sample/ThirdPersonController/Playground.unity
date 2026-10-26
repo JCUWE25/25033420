@@ -1855,6 +1855,7 @@ GameObject:
   - component: {fileID: 1530538280}
   - component: {fileID: 1530538279}
   - component: {fileID: 1530538278}
+  - component: {fileID: 1530538283}
   m_Layer: 0
   m_Name: coin
   m_TagString: Coin
@@ -1869,14 +1870,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1530538277}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9854dd05173ff27418a7a06fc028580e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  CoinUI: {fileID: 0}
-  coinCounter: {fileID: 0}
-  items: []
+  cointxt: {fileID: 0}
+  coinUI: {fileID: 0}
 --- !u!136 &1530538279
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1892,7 +1892,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1972,6 +1972,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &1530538283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530538277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0737778b6f845d46a079807bce5155f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemClassInventory
+  ItemName: coin
 --- !u!1001 &1531357339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2223,7 +2236,7 @@ PrefabInstance:
       addedObject: {fileID: 1762682266}
     - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1762682272}
+      addedObject: {fileID: 1762682278}
   m_SourcePrefab: {fileID: 100100000, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
 --- !u!114 &1762682259 stripped
 MonoBehaviour:
@@ -2262,7 +2275,7 @@ MonoBehaviour:
   inventoryManagement: {fileID: 0}
   NewName: dsaasgf
   items: []
---- !u!114 &1762682272
+--- !u!114 &1762682278
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2271,12 +2284,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1177936806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9854dd05173ff27418a7a06fc028580e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c2d509f3b182c6449c1150047d1549a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PickUp
-  CoinUI: {fileID: 1041509667}
-  coinCounter: {fileID: 1314798660}
-  items: []
+  m_EditorClassIdentifier: Assembly-CSharp::Collect
 --- !u!1 &1764214107
 GameObject:
   m_ObjectHideFlags: 0

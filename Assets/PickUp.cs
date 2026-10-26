@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
- 
+    [SerializeField] TextMeshProUGUI cointxt;
+    [SerializeField] GameObject coinUI;
 
      private bool HasPickedUp;
 
