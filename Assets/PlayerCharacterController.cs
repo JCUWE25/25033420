@@ -18,4 +18,18 @@ public class PlayerCharacterController : MonoBehaviour
             FindAnyObjectByType<GameManager>().OnPause();
         }
     }
+
+    void OnRemoveItem(InputValue value) 
+    {
+        if (value.isPressed) 
+        {
+            Debug.Log("Removing Item");
+
+            if (FindAnyObjectByType<GameManager>().state == GameState.GAMEPLAY) 
+            {
+                FindAnyObjectByType<Inventory>().RemoveItemFromInventory();
+            }
+        }
+
+    }
 }
