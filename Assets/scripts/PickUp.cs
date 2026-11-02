@@ -6,8 +6,8 @@ public class PickUp : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI cointxt;
     [SerializeField] GameObject coinUI;
-
-     private bool HasPickedUp;
+    private int score;
+   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,10 +18,7 @@ public class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (HasPickedUp == true) 
-        {
-  
-        }
+       
         
     }
 

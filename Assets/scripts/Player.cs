@@ -4,7 +4,8 @@ using UnityEngine;
 public class Collect : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI cointxt;
-    [SerializeField] GameObject coinUI;
+   
+    private int score;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,7 +15,7 @@ public class Collect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        cointxt.text = score.ToString();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,6 +24,10 @@ public class Collect : MonoBehaviour
 
         if (pickup != null)
         {
+            if (pickup.tag == "Coin") 
+            {
+                score++;
+            }
             pickup.Collect();
         }
     }
