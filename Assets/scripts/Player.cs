@@ -1,7 +1,10 @@
+using TMPro;
 using UnityEngine;
 
 public class Collect : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI cointxt;
+    [SerializeField] GameObject coinUI;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
