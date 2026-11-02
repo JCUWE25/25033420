@@ -8,6 +8,9 @@ public class Inventory : MonoBehaviour
     [SerializeField] string NewName;
     [SerializeField] Transform worldItems;
     [SerializeField] TextMeshProUGUI cointxt;
+    [SerializeField] AudioClip coinPickUp;
+    [SerializeField] AudioSource audioSource;
+
     private int score;
 
     public List<ItemClassInventory> items = new List<ItemClassInventory>();
@@ -58,6 +61,8 @@ public class Inventory : MonoBehaviour
         {
             if (item.tag == "Coin")
             {
+                audioSource.clip = coinPickUp;
+                audioSource.Play();
                 score++;
             }
             
