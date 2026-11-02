@@ -6,7 +6,7 @@ public class PickUp : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI cointxt;
     [SerializeField] GameObject coinUI;
-    private int score;
+    
    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
