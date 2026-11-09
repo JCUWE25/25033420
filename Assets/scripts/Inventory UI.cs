@@ -23,6 +23,17 @@ public class InventoryUI : MonoBehaviour
 
     void RefreshInventory() 
     {
+
+        foreach  (GameObject i in UIButtons)
+        {
+            gameObject.SetActive(false);
+
+        }
+
+        for (int i = 0; i <= UIButtons.Count; i++ ) 
+        {
+        
+        }
         Debug.Log("refresh inventory UI");
     }
 }
