@@ -4,7 +4,7 @@ using UnityEngine;
 public class InventoryUI : MonoBehaviour
 {
    public Inventory inventory;
-    public List<GameObject> UIButtons = new List<GameObject>();
+    public List<GameObject> Buttons;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,18 +21,33 @@ public class InventoryUI : MonoBehaviour
          RefreshInventory();
     }
 
+    public void RemoveItem(int i) 
+    {
+        inventory.RemoveItemFromInventory(i);
+        RefreshInventory();
+    }
     void RefreshInventory() 
     {
 
-        foreach  (GameObject i in UIButtons)
+        foreach  (GameObject i in Buttons)
         {
             gameObject.SetActive(false);
 
         }
 
-        for (int i = 0; i <= UIButtons.Count; i++ ) 
+        for (int i = 0; i < inventory.items.Count; i++ ) 
         {
-        
+            if (i < Buttons.Count) 
+            { 
+            //GameObject UiButton = Buttons[i].GetComponent<UIButton>();
+            //    GameObject item = UiButton;
+            //    item.gameObject.GetComponent<UIButton>();
+            //    item.SetButton();
+            UIButton temp = Buttons[i].GetComponent<UIButton>();
+            ItemClassInventory tempItem = inventory.items[i];
+            temp.SetButton(tempItem);
+            Buttons[i].SetActive(true);
+            }
         }
         Debug.Log("refresh inventory UI");
     }

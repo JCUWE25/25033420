@@ -33,11 +33,18 @@ public class Inventory : MonoBehaviour
         item.OnCollect();
     }
 
-    public  void RemoveItemFromInventory()
+    public void RemoveItemFromInventory()
     {
         if (items.Count > 0) 
         {
-        ItemClassInventory item = items[0];
+            RemoveItemFromInventory(0);
+        }
+    }
+    public  void RemoveItemFromInventory(int i)
+    {
+        if (items.Count > i) 
+        {
+        ItemClassInventory item = items[i];
             GameObject itemObject = item.gameObject;
 
             items.Remove(item);
