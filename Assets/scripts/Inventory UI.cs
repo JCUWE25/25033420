@@ -31,8 +31,8 @@ public class InventoryUI : MonoBehaviour
 
         foreach  (GameObject i in Buttons)
         {
-            gameObject.SetActive(false);
-
+            // gameObject.SetActive(false);
+           
         }
 
         for (int i = 0; i < inventory.items.Count; i++ ) 
