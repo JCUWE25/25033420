@@ -53,13 +53,13 @@ public class GameManager : MonoBehaviour
             switch (state)
             {
                 case GameState.GAMEPLAY:
-                    Time.timeScale = 0.0f;
+                    Time.timeScale = 1.0f;
                     InventUIRef.SetActive(false);
                     Cursor.lockState = CursorLockMode.Locked;
                     break;
                 case GameState.PAUSE:
                     InventUIRef.SetActive(true);
-                    Time.timeScale = 1.0f;
+                    Time.timeScale = 0.0f;
                     Cursor.lockState = CursorLockMode.None;
                     break;
             }
