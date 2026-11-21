@@ -31,7 +31,7 @@ public class InventoryUI : MonoBehaviour
 
         foreach  (GameObject i in Buttons)
         {
-            // gameObject.SetActive(false);
+            gameObject.SetActive(false);
            
         }
 
